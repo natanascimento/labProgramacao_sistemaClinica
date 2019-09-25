@@ -1,0 +1,25 @@
+def salvar(matricula, nome, email, telefone, celular, endereco, numero_casa, bairro, cidade, uf, complemento, cargo, salario_bruto, setor):
+    arquivo = open("arquivo.txt", "a")
+    arquivo.write("================================================")
+    arquivo.write("\nMatricula: " + str(matricula))
+    arquivo.write("\nNome: " + str(nome))
+    arquivo.write("\nEmail: " + str(email))
+    arquivo.write("\nTelefone: " + str(telefone))
+    arquivo.write("\nCelular: " + str(celular))
+    arquivo.write("\nEndereco: " + str(endereco))
+    arquivo.write("\nNumero da Residencia: " + str(numero_casa))
+    arquivo.write("\nBairro: " + str(bairro))
+    arquivo.write("\nCidade: " + str(cidade))
+    arquivo.write("\nUF: " + str(uf))
+    arquivo.write("\nComplemento: " + str(complemento))
+    arquivo.write("\nCargo: " + str(cargo))
+    arquivo.write("\nSalario: " + str(salario_bruto))
+    arquivo.write("\nSetor: " + str(setor))
+
+    arquivo.close()
+
+def exibir():
+    arquivo = open("arquivo.txt", "r")
+    texto = arquivo.read()
+    print(texto)
+    arquivo.close()

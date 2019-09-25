@@ -22,7 +22,7 @@ def cadastro_funcionario():
 
   lista_funcionario = [matricula, nome, email, telefone, celular, endereco, numero_casa, bairro, cidade, uf, complemento, cargo, salario_bruto, setor]
   
-  pickle.dump(lista_funcionario, open (dados_funcionario, "wb"))
+  pickle.dump(lista_funcionario, open (dados_funcionario, "ab+"))
   print ("Cadastro efetuado com sucesso!")
 
   #Exportando para o arquivo ao realizar o cadastro
@@ -74,31 +74,32 @@ def consulta():
   ref_arquivo = open("funcionarios.txt", "r")
   for linha in ref_arquivo:
     valores = linha.split()
-
     if valores[1] == "Natan":
       print (1)
     
   ref_arquivo.close()
 '''
 def consulta():
-    pos_i = 0 # variável provisória de índice
-    pos_j = 0 # idem
 
-    procura_nome = input("Informe um nome a consultar: ")
+    #Conjunto de dados
+    data = open("funcionarios.txt", "r")
+    data = data.read()
 
-    lista = open("funcionarios.txt", "r")
-    lista = lista.read()
-    for i in range (len(lista)): # procurar em todas as listas internas
-        for j in range (i): # procurar em todos os elementos nessa lista
-            if procura_nome in lista[i][j]: # se encontrarmos elemento 
-              pos_i = i # guardamos o índice i
-              pos_j = j # e o índice j
-              break
-            break
-    return(pos_i, pos_j)
+    finder = input("Informe um nome a consultar: ")
+
+    #Faz o filtro da lista atraves da condição especificada
+    condition = filter(lambda x: x[0] == finder, data)
+    #Converte o filtro para uma lista comum
+    filters = list(condition)
+
+    result = []
+    #Percorre cada item da lista enumerando
+    for index, item in enumerate(data):
+        if item in filters:
+            result.append(index)
 
 
-def menu (cadastro_funcionario, exibir, lista_funcionario):
+def menu (cadastro_funcionario, consulta, lista_funcionario):
   print ("Sistema de Clinica Médica")
   print ("1  - Cadastrar \n2  - Consulta \n3 - Listar Funcionários")
 
@@ -112,6 +113,3 @@ def menu (cadastro_funcionario, exibir, lista_funcionario):
       listar_funcionarios()
       
 menu(cadastro_funcionario, consulta, listar_funcionarios)
-
-
-
