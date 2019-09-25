@@ -67,7 +67,7 @@ def listar_funcionarios():
     for linha in arquivo:
       linhas_em_brancos = linha.strip()
       print(linhas_em_brancos)
-
+'''
 #Consultar utilizando nome
 def consulta():
   procura_nome = input("Informe um nome a consultar: ")
@@ -75,12 +75,28 @@ def consulta():
   for linha in ref_arquivo:
     valores = linha.split()
 
-  if procura_nome == valores[1]:
-    print (valores)
-  else:
-    print("Nome Incorreto")
+    if valores[1] == "Natan":
+      print (1)
     
   ref_arquivo.close()
+'''
+def consulta():
+    pos_i = 0 # variável provisória de índice
+    pos_j = 0 # idem
+
+    procura_nome = input("Informe um nome a consultar: ")
+
+    lista = open("funcionarios.txt", "r")
+    lista = lista.read()
+    for i in range (len(lista)): # procurar em todas as listas internas
+        for j in range (i): # procurar em todos os elementos nessa lista
+            if procura_nome in lista[i][j]: # se encontrarmos elemento 
+              pos_i = i # guardamos o índice i
+              pos_j = j # e o índice j
+              break
+            break
+    return(pos_i, pos_j)
+
 
 def menu (cadastro_funcionario, exibir, lista_funcionario):
   print ("Sistema de Clinica Médica")
