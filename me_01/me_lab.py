@@ -25,7 +25,7 @@ def cadastro_funcionario():
   pickle.dump(lista_funcionario, open (dados_funcionario, "wb"))
   print ("Cadastro efetuado com sucesso!")
 
-  #Exportano para o arquivo ao realizar o cadastro
+  #Exportando para o arquivo ao realizar o cadastro
   funcionario_info()
 
 def calcular_inss(salario_bruto):
@@ -74,10 +74,12 @@ def consulta():
   ref_arquivo = open("funcionarios.txt", "r")
   for linha in ref_arquivo:
     valores = linha.split()
-    if procura_nome == valores[1]:
-      print (valores)
-    else:
-      print("Nome Incorreto")
+
+  if procura_nome == valores[1]:
+    print (valores)
+  else:
+    print("Nome Incorreto")
+    
   ref_arquivo.close()
 
 def menu (cadastro_funcionario, exibir, lista_funcionario):
