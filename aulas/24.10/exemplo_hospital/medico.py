@@ -16,3 +16,4 @@ class medico:
         self.celular2 = input("Informe o segundo celular do médico: ")
         self.email = input("Informe o email do médico: ")
         self.e.cadastrar_endereco()
+        
