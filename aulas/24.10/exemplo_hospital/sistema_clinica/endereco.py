@@ -16,3 +16,11 @@ class endereco:
         self.bairro = input("Entre com o bairro do endereço: ")
         self.cidade = input("Entre com a cidade: ")
         self.uf = input("Informe a Unidade Federativa: ")
+    
+    def exibir_endereco (self):
+        print(self.logradouro)
+        print(self.numero)
+        print(self.complemento)
+        print(self.bairro)
+        print(self.cidade)
+        print(self.uf)
