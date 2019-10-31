@@ -1,0 +1,7 @@
+tem um ou tem varios - associacao / é um ? - herança
+
+Para identificar as classes deve-se responder as perguntas abaixo:
+
+tem um ou tem varios? -> Associação
+
+é um? Herença

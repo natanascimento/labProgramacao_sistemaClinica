@@ -7,6 +7,7 @@ class menu:
     def __init__(self):
         self.cod = " "
         self.p = p.paciente()
+        self.m = m.medico()
 
     def main_menu(self):
         print ("Sistema de Clinica Médica")
@@ -16,6 +17,8 @@ class menu:
 
         if self.cod == "1":
             self.p.cadastrar_paciente()
+            self.m.cadastrar_medico()
+
         if self.cod == "2":
             self.p.exibir_paciente()
     
