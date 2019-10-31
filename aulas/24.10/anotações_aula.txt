@@ -1,3 +1,0 @@
-Abstração: capacidade de levar ao software objetos do mundo real. No exemplo joão, maria, carlos e silvia sã pacientes logo, são objetos do sistema. 
-Associação: é a ligação de duas classes
-Refatoração - é o ato de reformular o codigo, melhoria continua sem perder as funcionalidades.

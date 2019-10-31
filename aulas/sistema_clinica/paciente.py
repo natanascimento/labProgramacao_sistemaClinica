@@ -1,3 +1,5 @@
+#Implementação Dia 24/10
+
 import pessoa as p
 
 class paciente (p.pessoa):
