@@ -1,5 +1,6 @@
 import medico as m
 import paciente as p
+
 class agenda:
     def __init__(self, medico, paciente, dia, mes, ano, hora, observacao=""):
         self.medico = medico
@@ -9,6 +10,7 @@ class agenda:
         self.ano = ano
         self.hora = hora
         self.obs = observacao
+        
     def exibir_agenda(self):
         print(self.medico.nome)
         print(self.paciente.nome)

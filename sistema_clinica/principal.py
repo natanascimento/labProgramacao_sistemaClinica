@@ -5,7 +5,7 @@ import paciente as p
 import medico as m
 import endereco as end
 import funcionario as func
-import agenda as ag
+import agenda as a
 
 class menu ():
     def __init__(self):
@@ -63,10 +63,10 @@ class menu ():
             self.sec_cod = input("Informe a opção de entrada no menu: ")
 
             if self.sec_cod == "1":
-                self.p.cadastrar_paciente()
+                self.a.cadastrar_agenda()
             
             if self.sec_cod == "2":
-                self.p.exibir_paciente()
+                self.a.exibir_agenda()
 
 main = menu()
 main.main_menu()
