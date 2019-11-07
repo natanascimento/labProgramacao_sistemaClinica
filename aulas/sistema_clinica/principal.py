@@ -3,7 +3,7 @@
 import paciente as p
 import medico as m
 
-class menu:
+class menu ():
     def __init__(self):
         self.cod = " "
         self.p = p.paciente()
